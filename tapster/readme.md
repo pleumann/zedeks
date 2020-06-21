@@ -26,7 +26,7 @@ A logfile ```tapster.log``` is automatically created in the target directory (in
 
 For the fun of it, let's have a look at how Tapster works. At the heart of the program are two little machine code subroutines. In fact they are so tiny I was too lazy to fire up a proper Assembler and preferred to ```POKE``` them into memory instead (using Appendix A of the excellent Next User Manual as a reference).
 
-The first routine loads a block from tape. For an ordinary file this routine is called twice, first for the file's header, then for the file's data. The length of the block (including a leading byte and a trailing checksum) is returned in the BC register pair, so we can assign it to a variable in BASIC. We then analyze the header according to the [tape specification](https://faqwiki.zxnet.co.uk/wiki/Spectrum_tape_interface#Blocks) in order to know what we are dealing with and print that to the screen.
+The first routine loads a block from tape using a [ROM routine](https://skoolkid.github.io/rom/asm/0556.html). For an ordinary file this routine is called twice, first for the file's header, then for the file's data. The length of the block (including a leading byte and a trailing checksum) is returned in the BC register pair, so we can assign it to a variable in BASIC. We then analyze the header according to the [tape specification](https://faqwiki.zxnet.co.uk/wiki/Spectrum_tape_interface#Blocks) in order to know what we are dealing with and print that to the screen.
 
 ```
 TAPE    LD IX,start
