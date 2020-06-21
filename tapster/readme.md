@@ -1,6 +1,6 @@
 # Tapster #
 
-Tapster is a little BASIC tool that allows you to easily and automatically transfer tapes to the Next's disk. It does not create a TAP file, but individual files that can easily be edited later. So this is not meant for getting all your tapes full of games to the Next (use [HeartWare's Tape2Tap](https://www.facebook.com/groups/specnext/permalink/1154746544882664/) for that), but rather for tapes that contain BASIC programs from back-in-the-day, pictures, Tasword files or other things you might want to "migrate" to your lovely new machine and continue using or even improving there. In that sense I consider it a spiritual successor to the converter tool that came on the introductory Sinclair Microdrive cartridge.
+Tapster is a little BASIC tool that allows you to easily and automatically transfer tapes to the Next's disk. It does not create a TAP file, but individual files that can be edited later. So this is not meant for getting all your tapes full of games to the Next (use [HeartWare's excellent Tape2Tap](https://www.facebook.com/groups/specnext/permalink/1154746544882664/) for that), but rather for tapes that contain BASIC programs from back-in-the-day, pictures, Tasword files or other things you might want to "migrate" to your lovely new machine and continue using or even improving there. In that sense I consider it a spiritual successor to the converter tool that came on the introductory Sinclair Microdrive cartridge.
 
 ![Screenshots](https://github.com/pleumann/zxstuff/blob/master/tapster/tapster.png?raw=true)
 
