@@ -20,7 +20,7 @@ Using Tapster is as easy as selecting a target directory (notice that unlike the
 * Suffixes (such as ```.bas``` or ```.scr```) can be generated, so the browser knows what type of file it is.
 * Headerless file can be allowed, although these will always be saved as ```"Untitled" CODE```.
 
-A logfile ```tapster.txt``` is automatically created in the target directory (including timestamp if you have an RTC in your Next). This allows you to import a full C60 or C90 in an unattended manner and check the results afterwards to see which files were converted and what their final names were.
+A logfile ```tapster.log``` is automatically created in the target directory (including timestamp if you have an RTC in your Next). This allows you to import a full C60 or C90 in an unattended manner and check the results afterwards to see which files were converted and what their final names were.
 
 ## How does it work? ##
 
@@ -29,7 +29,7 @@ For the fun of it, let's have a look at how Tapster works. At the heart of the p
 The first routine loads a block from tape. For an ordinary file this routine is called twice, first for the file's header, then for the file's data. The length of the block (including a leading byte and a trailing checksum) is returned in the BC register pair, so we can assign it to a variable in BASIC. We then analyze the header according to the [tape specification](https://faqwiki.zxnet.co.uk/wiki/Spectrum_tape_interface#Blocks) in order to know what we are dealing with and print that to the screen.
 
 ```
-        LD IX,start
+TAPE    LD IX,start
         LD DE,length
         LD C,$0E
         SCF
@@ -50,7 +50,7 @@ The first routine loads a block from tape. For an ordinary file this routine is 
 The second piece of machine code generates a checksum for a block in memory. We need two different kinds of checksums. Tape checksums are an XOR of all bytes in a block. Disk checksums are the sum of all bytes in the file's +3DOS header (or the first 127 bytes of it, to be correct) modulo 256. The routine generates both at the same time and returns them in the upper and lower halves of BC, respectively.
 
 ```
-        LD HL,start
+CHECK   LD HL,start
         LD DE,length
         LD BC,0
 LOOP    LD A,D
